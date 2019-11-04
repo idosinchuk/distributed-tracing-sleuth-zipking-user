@@ -23,7 +23,7 @@ public class AddressEntity {
     private Integer number;
 
     @Column(name = "FLOOR")
-    private Integer floor;
+    private String floor;
 
     @Column(name = "CITY")
     private String city;

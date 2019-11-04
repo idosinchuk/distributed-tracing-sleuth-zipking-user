@@ -1,0 +1,298 @@
+2019-11-04 08:48:29.508  INFO [-,,,] 26592 --- [main] tedTracingSleuthZipkinAddressApplication : No active profile set, falling back to default profiles: default
+2019-11-04 08:48:31.711  INFO [-,,,] 26592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-04 08:48:32.033  INFO [-,,,] 26592 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 266ms. Found 1 repository interfaces.
+2019-11-04 08:48:33.008  INFO [-,,,] 26592 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=408671e6-c9d0-3a85-bb57-8bd6175bd9f2
+2019-11-04 08:48:34.413  INFO [-,,,] 26592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:48:34.837  INFO [-,,,] 26592 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$f5697869] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:48:36.515  INFO [-,,,] 26592 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-11-04 08:48:37.305  INFO [-,,,] 26592 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-04 08:48:37.307  INFO [-,,,] 26592 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-04 08:48:38.081  INFO [-,,,] 26592 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-04 08:48:38.083  INFO [-,,,] 26592 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 8481 ms
+2019-11-04 08:48:38.736  INFO [-,,,] 26592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-04 08:48:40.058  INFO [-,,,] 26592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-04 08:48:40.099  INFO [-,,,] 26592 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:distributed-tracing-sleuth-zipkin-addressdb'
+2019-11-04 08:48:43.867  INFO [-,,,] 26592 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-04 08:48:44.280  INFO [-,,,] 26592 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-11-04 08:48:44.833  INFO [-,,,] 26592 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-04 08:48:45.323  INFO [-,,,] 26592 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-11-04 08:48:48.072  INFO [-,,,] 26592 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-04 08:48:48.132  INFO [-,,,] 26592 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-04 08:48:48.638  WARN [-,,,] 26592 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/T:/wk/distributed-tracing-sleuth-zipking-address/target/classes/data.sql]: insert into user (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain'); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USER" no encontrada
+Table "USER" not found; SQL statement:
+insert into user (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [42102-199]
+2019-11-04 08:48:48.913  INFO [-,,,] 26592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-11-04 08:48:48.942  INFO [-,,,] 26592 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-11-04 08:48:48.946  INFO [-,,,] 26592 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-11-04 08:48:49.009  INFO [-,,,] 26592 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-04 08:48:49.065 ERROR [-,,,] 26592 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/T:/wk/distributed-tracing-sleuth-zipking-address/target/classes/data.sql]: insert into user (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain'); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USER" no encontrada
+Table "USER" not found; SQL statement:
+insert into user (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [42102-199]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.idosinchuk.distributedtracing.address.DistributedTracingSleuthZipkinAddressApplication.main(DistributedTracingSleuthZipkinAddressApplication.java:14)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/T:/wk/distributed-tracing-sleuth-zipking-address/target/classes/data.sql]: insert into user (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain'); nested exception is org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USER" no encontrada
+Table "USER" not found; SQL statement:
+insert into user (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [42102-199]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:626)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:89)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:37)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:99)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:90)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1807)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 15 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Tabla "USER" no encontrada
+Table "USER" not found; SQL statement:
+insert into user (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [42102-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.command.Parser.readTableOrView(Parser.java:7146)
+	at org.h2.command.Parser.readTableOrView(Parser.java:7117)
+	at org.h2.command.Parser.parseInsert(Parser.java:1682)
+	at org.h2.command.Parser.parsePrepared(Parser.java:891)
+	at org.h2.command.Parser.parse(Parser.java:788)
+	at org.h2.command.Parser.parse(Parser.java:760)
+	at org.h2.command.Parser.prepareCommand(Parser.java:683)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:605)
+	... 31 common frames omitted
+
+2019-11-04 08:54:19.018  INFO [-,,,] 27392 --- [main] tedTracingSleuthZipkinAddressApplication : No active profile set, falling back to default profiles: default
+2019-11-04 08:54:20.713  INFO [-,,,] 27392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-04 08:54:20.912  INFO [-,,,] 27392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 172ms. Found 1 repository interfaces.
+2019-11-04 08:54:21.578  INFO [-,,,] 27392 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=408671e6-c9d0-3a85-bb57-8bd6175bd9f2
+2019-11-04 08:54:22.301  INFO [-,,,] 27392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:54:22.437  INFO [-,,,] 27392 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$12515622] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:54:23.605  INFO [-,,,] 27392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-11-04 08:54:23.878  INFO [-,,,] 27392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-04 08:54:23.881  INFO [-,,,] 27392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-04 08:54:24.427  INFO [-,,,] 27392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-04 08:54:24.429  INFO [-,,,] 27392 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5357 ms
+2019-11-04 08:54:25.093  INFO [-,,,] 27392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-04 08:54:26.073  INFO [-,,,] 27392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-04 08:54:26.145  INFO [-,,,] 27392 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:distributed-tracing-sleuth-zipkin-addressdb'
+2019-11-04 08:54:29.255  INFO [-,,,] 27392 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-04 08:54:29.573  INFO [-,,,] 27392 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-11-04 08:54:30.333  INFO [-,,,] 27392 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-04 08:54:31.628  INFO [-,,,] 27392 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-11-04 08:54:34.568  INFO [-,,,] 27392 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-04 08:54:34.597  INFO [-,,,] 27392 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-04 08:54:34.905  WARN [-,,,] 27392 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/T:/wk/distributed-tracing-sleuth-zipking-address/target/classes/data.sql]: insert into address (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain'); nested exception is org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'1C' (ADDRESS: ""FLOOR"" INTEGER)"
+Data conversion error converting "'1C' (ADDRESS: ""FLOOR"" INTEGER)"; SQL statement:
+insert into address (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') -- (10001, 'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [22018-199]
+2019-11-04 08:54:35.903  INFO [-,,,] 27392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-11-04 08:54:35.915  INFO [-,,,] 27392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-11-04 08:54:35.919  INFO [-,,,] 27392 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-11-04 08:54:35.967  INFO [-,,,] 27392 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-04 08:54:36.012 ERROR [-,,,] 27392 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/T:/wk/distributed-tracing-sleuth-zipking-address/target/classes/data.sql]: insert into address (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain'); nested exception is org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'1C' (ADDRESS: ""FLOOR"" INTEGER)"
+Data conversion error converting "'1C' (ADDRESS: ""FLOOR"" INTEGER)"; SQL statement:
+insert into address (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') -- (10001, 'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [22018-199]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.idosinchuk.distributedtracing.address.DistributedTracingSleuthZipkinAddressApplication.main(DistributedTracingSleuthZipkinAddressApplication.java:14)
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/T:/wk/distributed-tracing-sleuth-zipking-address/target/classes/data.sql]: insert into address (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain'); nested exception is org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'1C' (ADDRESS: ""FLOOR"" INTEGER)"
+Data conversion error converting "'1C' (ADDRESS: ""FLOOR"" INTEGER)"; SQL statement:
+insert into address (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') -- (10001, 'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [22018-199]
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:626)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:49)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:89)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.onApplicationEvent(DataSourceInitializerInvoker.java:37)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:403)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:360)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.publishEventIfRequired(DataSourceInitializedPublisher.java:99)
+	at org.springframework.boot.autoconfigure.orm.jpa.DataSourceInitializedPublisher.postProcessAfterInitialization(DataSourceInitializedPublisher.java:90)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1807)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	... 15 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "'1C' (ADDRESS: ""FLOOR"" INTEGER)"
+Data conversion error converting "'1C' (ADDRESS: ""FLOOR"" INTEGER)"; SQL statement:
+insert into address (ADDRESS_ID, STREET, NUMBER, FLOOR, CITY, POSTAL_CODE, COUNTRY) values(10001,'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') -- (10001, 'Second Street', 1, '1C', 'Madrid', '28721', 'Spain') [22018-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:455)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.table.Column.convert(Column.java:204)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:164)
+	at org.h2.command.dml.Insert.update(Insert.java:132)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:133)
+	at org.h2.command.Command.executeUpdate(Command.java:267)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:233)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:605)
+	... 31 common frames omitted
+Caused by: org.h2.message.DbException: Conversión de datos fallida, convirtiendo "1C"
+Data conversion error converting "1C" [22018-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.value.Value.convertTo(Value.java:829)
+	at org.h2.value.Value.convertTo(Value.java:735)
+	at org.h2.table.Column.convert(Column.java:199)
+	... 40 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "1C"
+Data conversion error converting "1C" [22018-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:455)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 44 common frames omitted
+Caused by: java.lang.NumberFormatException: For input string: "1C"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:580)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at org.h2.value.Value.convertToInt(Value.java:936)
+	at org.h2.value.Value.convertTo(Value.java:764)
+	... 42 common frames omitted
+
+2019-11-04 08:55:51.238  INFO [-,,,] 6100 --- [main] tedTracingSleuthZipkinAddressApplication : No active profile set, falling back to default profiles: default
+2019-11-04 08:55:53.102  INFO [-,,,] 6100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-04 08:55:53.353  INFO [-,,,] 6100 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 208ms. Found 1 repository interfaces.
+2019-11-04 08:55:54.140  INFO [-,,,] 6100 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=408671e6-c9d0-3a85-bb57-8bd6175bd9f2
+2019-11-04 08:55:54.911  INFO [-,,,] 6100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:55:55.043  INFO [-,,,] 6100 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$222c1284] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:55:56.603  INFO [-,,,] 6100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2019-11-04 08:55:56.644  INFO [-,,,] 6100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-04 08:55:56.646  INFO [-,,,] 6100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-04 08:55:56.986  INFO [-,,,] 6100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-04 08:55:56.988  INFO [-,,,] 6100 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5696 ms
+2019-11-04 08:55:57.247  INFO [-,,,] 6100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-04 08:55:57.600  INFO [-,,,] 6100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-04 08:55:57.620  INFO [-,,,] 6100 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:distributed-tracing-sleuth-zipkin-addressdb'
+2019-11-04 08:55:59.643  INFO [-,,,] 6100 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-04 08:55:59.897  INFO [-,,,] 6100 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-11-04 08:56:00.438  INFO [-,,,] 6100 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-04 08:56:00.881  INFO [-,,,] 6100 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-11-04 08:56:02.794  INFO [-,,,] 6100 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-04 08:56:02.817  INFO [-,,,] 6100 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-04 08:56:04.141  WARN [-,,,] 6100 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-04 08:56:04.653  INFO [-,,,] 6100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-04 08:56:07.908  INFO [-,,,] 6100 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2019-11-04 08:56:09.798  INFO [-,,,] 6100 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2019-11-04 08:56:09.806  WARN [-,,,] 6100 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-11-04 08:56:09.808  WARN [-,,,] 6100 --- [main] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [AsyncReporter{org.springframework.cloud.sleuth.zipkin2.sender.RestTemplateSender@69a40b3c}] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ zipkin2.reporter.ByteBoundedQueue.drainTo(ByteBoundedQueue.java:81)
+ zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:257)
+ zipkin2.reporter.AsyncReporter$Builder$1.run(AsyncReporter.java:190)
+2019-11-04 08:56:09.820  INFO [-,,,] 6100 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-11-04 08:56:09.826  INFO [-,,,] 6100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-04 08:56:09.828  INFO [-,,,] 6100 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-04 08:56:09.829  INFO [-,,,] 6100 --- [main] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-11-04 08:56:09.982  INFO [-,,,] 6100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-11-04 08:56:09.995  INFO [-,,,] 6100 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-11-04 08:56:10.013 ERROR [-,,,] 6100 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+
+2019-11-04 08:59:45.076  INFO [-,,,] 17008 --- [main] tedTracingSleuthZipkinAddressApplication : No active profile set, falling back to default profiles: default
+2019-11-04 08:59:46.894  INFO [-,,,] 17008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-11-04 08:59:47.073  INFO [-,,,] 17008 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 155ms. Found 1 repository interfaces.
+2019-11-04 08:59:47.809  INFO [-,,,] 17008 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=408671e6-c9d0-3a85-bb57-8bd6175bd9f2
+2019-11-04 08:59:48.501  INFO [-,,,] 17008 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:59:48.607  INFO [-,,,] 17008 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$abbff468] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-11-04 08:59:49.587  INFO [-,,,] 17008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2019-11-04 08:59:49.615  INFO [-,,,] 17008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-04 08:59:49.617  INFO [-,,,] 17008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-11-04 08:59:50.157  INFO [-,,,] 17008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-04 08:59:50.159  INFO [-,,,] 17008 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5035 ms
+2019-11-04 08:59:50.430  INFO [-,,,] 17008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-04 08:59:50.753  INFO [-,,,] 17008 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-04 08:59:50.770  INFO [-,,,] 17008 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:distributed-tracing-sleuth-zipkin-addressdb'
+2019-11-04 08:59:52.846  INFO [-,,,] 17008 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-11-04 08:59:53.038  INFO [-,,,] 17008 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.4.6.Final}
+2019-11-04 08:59:53.416  INFO [-,,,] 17008 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-11-04 08:59:53.706  INFO [-,,,] 17008 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-11-04 08:59:55.432  INFO [-,,,] 17008 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-11-04 08:59:55.452  INFO [-,,,] 17008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-11-04 08:59:56.654  WARN [-,,,] 17008 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-11-04 08:59:57.208  INFO [-,,,] 17008 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-04 09:00:00.891  INFO [-,,,] 17008 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+2019-11-04 09:00:02.911  INFO [-,,,] 17008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2019-11-04 09:00:02.917  INFO [-,,,] 17008 --- [main] tedTracingSleuthZipkinAddressApplication : Started DistributedTracingSleuthZipkinAddressApplication in 24.961 seconds (JVM running for 28.874)
+2019-11-04 09:00:21.405  INFO [-,,,] 17008 --- [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2019-11-04 09:00:21.419  INFO [-,,,] 17008 --- [RMI TCP Connection(7)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-11-04 09:00:21.420  INFO [-,,,] 17008 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-11-04 09:00:21.422  INFO [-,,,] 17008 --- [RMI TCP Connection(7)-127.0.0.1] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-11-04 09:00:22.142  INFO [-,,,] 17008 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-11-04 09:00:22.157  INFO [-,,,] 17008 --- [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-11-04 09:00:23.357  INFO [-,,,] 17008 --- [RMI TCP Connection(7)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
