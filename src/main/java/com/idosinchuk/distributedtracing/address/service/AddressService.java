@@ -1,8 +1,8 @@
 package com.idosinchuk.distributedtracing.address.service;
 
-import com.idosinchuk.distributedtracing.address.dto.AddressDTO;
+import com.idosinchuk.distributedtracing.address.dto.Address;
 
 public interface AddressService {
 
-    AddressDTO getAddress(Integer addressId) throws Exception;
+    Address getAddress(Integer addressId);
 }

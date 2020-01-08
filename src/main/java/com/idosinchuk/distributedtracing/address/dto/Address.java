@@ -1,9 +1,11 @@
 package com.idosinchuk.distributedtracing.address.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
+@Builder
 @Data
-public class AddressDTO {
+public class Address {
 
     private Integer addressId;
 
@@ -11,7 +13,7 @@ public class AddressDTO {
 
     private Integer number;
 
-    private Integer floor;
+    private String floor;
 
     private String city;
 

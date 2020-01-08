@@ -1,8 +1,9 @@
 package com.idosinchuk.distributedtracing.address.repository;
 
-import com.idosinchuk.distributedtracing.address.entity.AddressEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.idosinchuk.distributedtracing.address.entity.AddressEntity;
 
 @Repository
 public interface AddressRepository extends JpaRepository<AddressEntity, Integer> {

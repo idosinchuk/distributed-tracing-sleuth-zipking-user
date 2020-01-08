@@ -1,44 +1,40 @@
 package com.idosinchuk.distributedtracing.address.service.impl;
 
-import com.idosinchuk.distributedtracing.address.dto.AddressDTO;
+import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.idosinchuk.distributedtracing.address.dto.Address;
 import com.idosinchuk.distributedtracing.address.entity.AddressEntity;
 import com.idosinchuk.distributedtracing.address.repository.AddressRepository;
 import com.idosinchuk.distributedtracing.address.service.AddressService;
-import org.modelmapper.ModelMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 public class AddressServiceImpl implements AddressService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AddressServiceImpl.class);
+	private AddressRepository addressRepository;
 
-    private AddressRepository addressRepository;
+	public AddressServiceImpl(AddressRepository addressRepository) {
+		this.addressRepository = addressRepository;
+	}
 
-    private ModelMapper modelMapper;
+	@Override
+	public Address getAddress(Integer addressId) {
 
-    @Autowired
-    public AddressServiceImpl(AddressRepository addressRepository, ModelMapper modelMapper) {
-        this.addressRepository = addressRepository;
-        this.modelMapper = modelMapper;
-    }
+		log.info("Call addressRepository to obtain Address data by addressId: {}", addressId);
+		
+		Optional<AddressEntity> addressEntity  = addressRepository.findById(addressId);
 
-    @Override
-    public AddressDTO getAddress(Integer addressId) throws Exception {
-        LOGGER.info("Fetching Address details for addressId: {}", addressId);
+		if (addressEntity.isPresent()) {
+			return Address.builder().addressId(addressEntity.get().getAddressId()).city(addressEntity.get().getCity()).country(addressEntity.get().getCountry())
+					.floor(addressEntity.get().getFloor()).number(addressEntity.get().getNumber())
+					.postalCode(addressEntity.get().getPostalCode()).street(addressEntity.get().getStreet()).build();
 
-        Optional<AddressEntity> addressEntity = addressRepository.findById(addressId);
-        AddressDTO addressDTO = null;
+		}
 
-        if (addressEntity.isPresent()) {
-            addressDTO = modelMapper.map(addressEntity, AddressDTO.class);
-
-        }
-
-        return addressDTO;
-    }
+		return Address.builder().build();
+	}
 }

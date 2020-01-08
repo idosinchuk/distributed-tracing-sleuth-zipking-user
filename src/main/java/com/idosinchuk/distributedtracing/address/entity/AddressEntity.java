@@ -1,11 +1,11 @@
 package com.idosinchuk.distributedtracing.address.entity;
 
-import lombok.Data;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import lombok.Data;
 
 @Data
 @Entity
@@ -13,25 +13,26 @@ import javax.persistence.Table;
 public class AddressEntity {
 
     @Id
-    @Column(name = "ADDRESS_ID")
+    @Column(name = "address_id")
     private Integer addressId;
 
-    @Column(name = "STREET")
+    @Column(name = "street")
     private String street;
 
-    @Column(name = "NUMBER")
+    @Column(name = "number")
     private Integer number;
 
-    @Column(name = "FLOOR")
+    @Column(name = "floor")
     private String floor;
 
-    @Column(name = "CITY")
+    @Column(name = "city")
     private String city;
 
-    @Column(name = "POSTAL_CODE")
+    @Column(name = "postal_code")
     private String postalCode;
 
-    @Column(name = "COUNTRY")
+    @Column(name = "country")
     private String country;
 
 }
+
