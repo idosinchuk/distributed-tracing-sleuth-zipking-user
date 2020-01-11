@@ -1,4 +1,4 @@
-package com.idosinchuk.distributedtracing.address;
+package com.idosinchuk.distributedtracing.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @SpringBootApplication
-public class DistributedTracingSleuthZipkinAddressApplication {
+public class DistributedTracingSleuthZipkinUserApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DistributedTracingSleuthZipkinAddressApplication.class, args);
+		SpringApplication.run(DistributedTracingSleuthZipkinUserApplication.class, args);
 	}
 }
