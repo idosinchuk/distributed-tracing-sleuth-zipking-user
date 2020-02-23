@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 	public User getUser(Integer userId) {
 
 		log.info("Call userRepository to obtain User data by userId: {}", userId);
-		
+
 		Optional<UserEntity> userEntity = userRepository.findById(userId);
 
 		if (userEntity.isPresent()) {
@@ -38,5 +38,21 @@ public class UserServiceImpl implements UserService {
 		}
 
 		return User.builder().build();
+	}
+
+	@Override
+	public User addUser(User user) {
+
+		UserEntity userRequest = UserEntity.builder().userId(user.getUserId()).name(user.getName())
+				.surname(user.getSurname()).identityCard(user.getIdentityCard()).dateOfBirth(user.getDateOfBirth())
+				.addressId(user.getAddressId()).build();
+
+		log.info("Call userRepository to create new User: {}", user);
+		UserEntity entityResponse = userRepository.save(userRequest);
+
+		return User.builder().userId(entityResponse.getUserId()).name(entityResponse.getName())
+				.surname(entityResponse.getSurname()).identityCard(entityResponse.getIdentityCard())
+				.dateOfBirth(entityResponse.getDateOfBirth()).addressId(entityResponse.getAddressId()).build();
+
 	}
 }
