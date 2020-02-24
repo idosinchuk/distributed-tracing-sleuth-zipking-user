@@ -1,7 +1,9 @@
 package com.idosinchuk.distributedtracing.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,9 +30,11 @@ public class UserController {
     }
     
     @PostMapping(value = "/users", produces = MediaType.APPLICATION_JSON_VALUE)
-    public User getUser(@RequestBody User user) {
+    public ResponseEntity<User> getUser(@RequestBody User user) {
     
 		log.info("Hello from User Service");
-    	return userService.addUser(user);
+    	User response = userService.addUser(user);
+		
+    	return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
